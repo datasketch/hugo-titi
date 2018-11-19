@@ -1,6 +1,6 @@
 ---
 title: A Quick Note on Two Beautiful Websites
-author: Yihui Xie
+author: Datasketch
 date: '2017-06-13'
 categories:
   - Example

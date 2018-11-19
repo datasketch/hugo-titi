@@ -1,15 +1,15 @@
 ---
-title: About Hugo XMin
-author: Yihui Xie
+title: About Hugo Titi
+author: Datasketch
 ---
 
-**XMin** is the first Hugo theme I have designed. The original reason that I wrote it was I needed a minimal example of Hugo themes when I was writing the  [**blogdown**](https://github.com/rstudio/blogdown) book. Basically I wanted a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, categories, tags, and RSS. That is all. Nothing fancy. In terms of CSS and JavaScript, I really want to keep them minimal. In fact, this theme does not contain any JavaScript code at all, although on this example website I did introduce some JavaScript code (still relatively simple anyway). The theme does not contain any images, either, and is pretty much a plain-text theme.
+**Titi** is the first Hugo theme I have designed. The original reason that I wrote it was I needed a minimal example of Hugo themes when I was writing the  [**blogdown**](https://github.com/rstudio/blogdown) book. Basically I wanted a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, categories, tags, and RSS. That is all. Nothing fancy. In terms of CSS and JavaScript, I really want to keep them minimal. In fact, this theme does not contain any JavaScript code at all, although on this example website I did introduce some JavaScript code (still relatively simple anyway). The theme does not contain any images, either, and is pretty much a plain-text theme.
 
-The theme name "XMin" can be interpreted as "**X**ie's **Min**imal theme" (Xie is my last name) or "e**X**tremely **Min**imal theme".
+The theme name "Titi" can be interpreted as "**X**ie's **Min**imal theme" (Xie is my last name) or "e**X**tremely **Min**imal theme".
 
 # config.toml
 
-For this example site, I defined permalinks for two sections, `post` and `note`, so that the links to pages under these directories will contain the date info, e.g., `https://xmin.yihui.name/post/2016/02/14/a-plain-markdown-post/`. This is optional, and it is up to your personal taste of URLs.
+For this example site, I defined permalinks for two sections, `post` and `note`, so that the links to pages under these directories will contain the date info, e.g., `https://Titi.datasketch.name/post/2016/02/14/a-plain-markdown-post/`. This is optional, and it is up to your personal taste of URLs.
 
 ```
 [permalinks]
@@ -47,7 +47,7 @@ The page footer can be defined in `.Params.footer`, and the text is treated as M
 
 ```
 [params]
-    footer = "&copy; [Yihui Xie](https://yihui.name) 2017"
+    footer = "&copy; [Datasketch](https://datasketch.co) 2017"
 ```
 
 # Custom layouts
@@ -55,11 +55,11 @@ The page footer can be defined in `.Params.footer`, and the text is treated as M
 There are two layout files under `layouts/partials/` that you may want to override: `head_custom.html` and `foot_custom.html`. This is how you inject arbitrary HTML code to the head and foot areas. For example, this site has a file `layouts/partials/foot_custom.html` to support LaTeX math via MathJax and center images automatically:
 
 ```html
-<script src="//yihui.name/js/math-code.js"></script>
+<script src="//datasketch.name/js/math-code.js"></script>
 <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<script async src="//yihui.name/js/center-img.js"></script>
+<script async src="//datasketch.name/js/center-img.js"></script>
 ```
 
 You can certainly enable highlight.js for syntax highlighting by yourself through `head_custom.html` and `foot_custom.html` if you want.
@@ -68,21 +68,21 @@ If you do not like the default fonts (e.g., `Palatino`), you may provide your ow
 
 # Other features
 
-I could have added more features to this theme, but I decided not to, since I have no intention to make this theme feature-rich. However, I will teach you how. I have prepared several examples via pull requests at https://github.com/yihui/hugo-xmin/pulls, so that you can see the implementations of these features when you check out the diffs in the pull requests. For example, you can:
+I could have added more features to this theme, but I decided not to, since I have no intention to make this theme feature-rich. However, I will teach you how. I have prepared several examples via pull requests at https://github.com/datasketch/hugo-titi/pulls, so that you can see the implementations of these features when you check out the diffs in the pull requests. For example, you can:
 
-- [Enable Google Analytics](https://github.com/yihui/hugo-xmin/pull/3)
+- [Enable Google Analytics](https://github.com/datasketch/hugo-titi/pull/3)
 
-- [Enable Disqus comments](https://github.com/yihui/hugo-xmin/pull/4)
+- [Enable Disqus comments](https://github.com/datasketch/hugo-titi/pull/4)
 
-- [Enable highlight.js for syntax highlighting of code blocks](https://github.com/yihui/hugo-xmin/pull/5)
+- [Enable highlight.js for syntax highlighting of code blocks](https://github.com/datasketch/hugo-titi/pull/5)
 
-- [Display categories and tags on a page](https://github.com/yihui/hugo-xmin/pull/2)
+- [Display categories and tags on a page](https://github.com/datasketch/hugo-titi/pull/2)
 
-- [Add a table of contents](https://github.com/yihui/hugo-xmin/pull/7)
+- [Add a table of contents](https://github.com/datasketch/hugo-titi/pull/7)
 
-- [Add a link in the footer of each page to "Edit this page" on Github](https://github.com/yihui/hugo-xmin/pull/6)
+- [Add a link in the footer of each page to "Edit this page" on Github](https://github.com/datasketch/hugo-titi/pull/6)
 
-To fully understand these examples, you have to read [the section on Hugo templates](https://bookdown.org/yihui/blogdown/templates.html) in the **blogdown** book.
+To fully understand these examples, you have to read [the section on Hugo templates](https://bookdown.org/datasketch/blogdown/templates.html) in the **blogdown** book.
 
 # Design philosophy
 
@@ -98,4 +98,4 @@ Compared to inconsistencies across browsers, I care much more about these proper
 - An image should be centered if it is the only child element of a paragraph.
 - The `max-width` of images, videos, and iframes should be `100%`.
 
-I hope you can enjoy this theme. The source code is [on Github](https://github.com/yihui/hugo-xmin). Happy hacking!
+I hope you can enjoy this theme. The source code is [on Github](https://github.com/datasketch/hugo-titi). Happy hacking!
