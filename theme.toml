@@ -1,11 +1,11 @@
 name = "Titi"
 license = "MIT"
 licenselink = "https://github.com/datasketch/hugo-titi/blob/master/LICENSE.md"
-description = "eXtremely Minimal Hugo theme: about 150 lines of code in total, including HTML and CSS"
-homepage = "https://Titi.datasketch.name"
-tags = ["minimal", "blog", "personal", "clean", "simple", "starter", "minimalist"]
+description = "Hugo Titi theme for data journalism sites"
+homepage = "https://dev.datasketch.co/hugo-titi"
+tags = ["blog","data journalism"]
 features = ["blog"]
-min_version = "0.18"
+min_version = "0.1"
 
 [author]
   name = "Datasketch"
