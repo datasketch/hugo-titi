@@ -21,17 +21,25 @@ footnotereturnlinkcontents = "↩"
     url = "/about/"
     weight = 2
 [[menu.main]]
+    name = "Methodology"
+    url = "/methodology/"
+    weight = 3
+[[menu.main]]
+    name = "Data"
+    url = "/data/"
+    weight = 4
+[[menu.main]]
     name = "Categories"
     url = "/categories/"
-    weight = 3
+    weight = 5
 [[menu.main]]
     name = "Tags"
     url = "/tags/"
-    weight = 4
+    weight = 6
 [[menu.main]]
     name = "Subscribe"
     url = "/index.xml"
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "A website built through Hugo, blogdown and Titi"
     footer = "&copy; [Datasketch](https://datasketch.co) 2017 -- 2018 | [Github](https://github.com/datasketch) | [Twitter](https://twitter.com/xiedatasketch)"
