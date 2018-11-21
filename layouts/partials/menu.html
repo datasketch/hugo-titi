@@ -1,0 +1,17 @@
+{{ $color := .Site.Params.nav.color }}
+{{ $bg := .Site.Params.nav.bg }}
+
+{{ if .Site.Menus.burger }}
+  <div
+    class="burger-menu column v-centered"
+    style="background: {{ $bg }}; color: {{ $color }}"
+  >
+    <div class="container">
+      <ul class="burger-menu--items">
+        {{ range .Site.Menus.burger }}
+          <li class="burger-menu--item"><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+{{ end }}
