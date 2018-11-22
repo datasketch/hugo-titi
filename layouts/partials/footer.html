@@ -1,7 +1,7 @@
 {{ $color := .Site.Params.footer.color }}
 {{ $bg := .Site.Params.footer.bg }}
 <footer style="background: {{ $bg }}; color: {{ $color }}">
-  <div class="footer__inner">
+  <div class="footer__inner text-center">
     {{ markdownify .Site.Params.footer.text }}
   </div>
 </footer>
