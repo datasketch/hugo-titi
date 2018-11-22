@@ -1,3 +1,6 @@
 {{ define "main" }}
   <p>{{ .Title }} -  Home</p>
+  {{ range .Pages }}
+    <a href="{{.URL}}">{{.Name}}</a>
+  {{ end }}
 {{ end }}

@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <div class="post__container">
+    <h1 class="post__title">{{ .Title }}</h1>
+    <div class="post__body">
+      {{ .Content }}
+    </div>
+    {{ if .Site.DisqusShortname }}
+      {{ template "_internal/disqus.html" . }}
+    {{ end }}
+  </div>
+{{ end }}

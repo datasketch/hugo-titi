@@ -2,23 +2,16 @@ baseURL = "/"
 title = "Titi"
 theme = "hugo-titi"
 themesDir = "../.."
+disqusShortname = "datasketch"
 
 [menu]
   [[menu.burger]]
-    name = "Inicio"
+    name = "Home"
     url = "/"
     weight = 1
-  [[menu.burger]]
-    name = "Titi rompiendo duro"
-    url = "/"
-    weight = 2
-  [[menu.burger]]
-    name = "Nuestro equipo"
-    url = "/equipo"
-    weight = 3
   [[menu.nav]]
-    name = "Metodología"
-    url = "/"
+    name = "Methodology"
+    url = "/methodology"
     weight = 1
 
 [params]
