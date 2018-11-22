@@ -15,7 +15,7 @@ Como ejemplo pone al sancocho: “es el paisaje de una región metido en una oll
 
 > “Si uno entiende bien la cocina colombiana ve que todos esos platos cuentan una historia en particular: de las culturas que han vivido allí y de los ingredientes que abundan en esa región”
 
-El Ministerio Nacional de Cultura ha intentado salvaguardar esta tradición culinaria en el [Gran libro de la cocina colombiana](http://www.mincultura.gov.co/Sitios/patrimonio/bibliotecas-de-cocinas/tomos/tomo09.pdf), escrito por Carlos Ordóñez y producido en 1981 por Colcultura e Intermedio Editores. El libro hace parte de la Biblioteca Básica de Cocina, que se ha convertido en una herramienta para conocer y promover las tradicionales regionales de Colombia, su historia y el complejo sistema culinario.
+El Ministerio Nacional de Cultura ha intentado salvaguardar esta tradición culinaria en el {{< anchor url="http://www.mincultura.gov.co/Sitios/patrimonio/bibliotecas-de-cocinas/tomos/tomo09.pdf">}}Gran libro de la cocina colombiana{{< /anchor >}}, escrito por Carlos Ordóñez y producido en 1981 por Colcultura e Intermedio Editores. El libro hace parte de la Biblioteca Básica de Cocina, que se ha convertido en una herramienta para conocer y promover las tradicionales regionales de Colombia, su historia y el complejo sistema culinario.
 
 Para hacer este especial, se analizaron los datos detrás de este libro para comprender mejor la cocina colombiana. Así, encontramos por ejemplo que, en promedio, las recetas nacionales tienen cinco ingredientes y que los más comunes son: aceite, sal, pimienta, ajo, huevo, cebolla, tomate y cilantro. Como quién dice, **el hogao es la base de nuestros platos.**
 
