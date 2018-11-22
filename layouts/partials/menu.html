@@ -11,6 +11,11 @@
         {{ range .Site.Menus.burger }}
           <li class="burger-menu--item"><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
+        {{ if .Site.Menus.nav }}
+          {{ range $menuNav := .Site.Menus.nav }}
+            <li class="burger-menu--item burger-menu--nav-item"><a href="{{ $menuNav.URL }}">{{ $menuNav.Name }}</a></li>
+          {{ end }}
+        {{ end }}
       </ul>
     </div>
   </div>

@@ -8,13 +8,13 @@
   style="background: {{ $bg }}; color: {{ $color }}"
   class="{{ if or (eq $fixed nil) ($fixed)}}fixed{{else}}no-fixed{{end}}"
 >
-  <nav class="container line v-centered">
+  <nav class="container line v-centered justify-between">
     <div class="nav__left line v-centered">
       {{ if .Site.Menus.burger }}
         <div class="burger">
-          <div class="burger-bar burger-bar--top"></div>
-          <div class="burger-bar burger-bar--mid"></div>
-          <div class="burger-bar burger-bar--bottom"></div>
+          <div class="burger-bar burger-bar--top" style="background: {{ $color }}"></div>
+          <div class="burger-bar burger-bar--mid" style="background: {{ $color }}"></div>
+          <div class="burger-bar burger-bar--bottom" style="background: {{ $color }}"></div>
         </div>
       {{ end }}
       <a href="/" class="line v-centered nav__logo">
