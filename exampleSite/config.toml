@@ -17,7 +17,7 @@ disqusShortname = "datasketch"
 [params]
   # SEO general site description
   description = "Site SEO description"
-  
+
   [params.nav]
     bg = "#eee"
     color = "black"

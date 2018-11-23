@@ -1,7 +1,7 @@
 ---
 title: "Colombia es paisaje e historia en un plato"
 date: "2018-11-22T17:33:28-05:00"
-description: "Type SEO description here"
+description: "La cocina de Colombia alcanza 700 recetas, lo que la hace más rica y diversa que la mexicana y peruana. Conoce lo que dicen los expertos de estas recetas."
 highlight: "#F1A208"
 ---
 
@@ -43,7 +43,7 @@ Algunos ejemplos de ingredientes únicos en el país son semillas y frutas exót
 
 Para Alejandro Gutiérrez, de Salvo Patria, las hojas de bijao, chisgua o plátano son fundamentales. “Para mí el recuerdo de un buen tamal en navidad, cuando uno abre las hojas y sale el vapor con el aroma, es una cosa que uno lleva en el corazón. Es algo hermoso y, aunque son ingredientes casi que por accidente, deberíamos rescatarlos”, explica.
 
-> El colombiano no conoce las cocinas tradicionales, pero sí las de crianza"
+{{< quote >}}"El colombiano no conoce las cocinas tradicionales, pero sí las de crianza"{{< /quote >}}
 
 Pese a esa gran variedad culinaria, el colombiano promedio conoce menos de 50 platos, lo que hace muy difícil fomentar la gastronomía nacional y asegurar su permanencia en el tiempo.
 
