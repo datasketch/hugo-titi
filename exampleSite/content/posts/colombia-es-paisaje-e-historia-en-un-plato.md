@@ -2,6 +2,7 @@
 title: "Colombia es paisaje e historia en un plato"
 date: "2018-11-22T17:33:28-05:00"
 description: "La cocina de Colombia alcanza 700 recetas, lo que la hace más rica y diversa que la mexicana y peruana. Conoce lo que dicen los expertos de estas recetas."
+# For custom color on anchor and blockquote tags, set this option and use the shortcodes.
 highlight: "#F1A208"
 ---
 
