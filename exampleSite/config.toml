@@ -3,6 +3,7 @@ title = "Titi"
 theme = "hugo-titi"
 themesDir = "../.."
 disqusShortname = "datasketch"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [menu]
   [[menu.burger]]
