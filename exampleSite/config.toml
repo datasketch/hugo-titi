@@ -6,12 +6,12 @@ disqusShortname = "datasketch"
 
 [menu]
   [[menu.burger]]
-    name = "Home"
+    name = "Inicio"
     url = "/"
     weight = 1
   [[menu.nav]]
-    name = "Methodology"
-    url = "/methodology"
+    name = "Metodología"
+    url = "/metodologia"
     weight = 1
 
 [params]

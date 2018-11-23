@@ -1,5 +1,5 @@
 ---
-title: Methodology
+title: Metodología
 author: Datasketch
 ---
 

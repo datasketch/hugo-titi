@@ -10,8 +10,9 @@
 >
   <nav class="container line v-centered justify-between">
     <div class="nav__left line v-centered">
-      {{ if .Site.Menus.burger }}
-        <div class="burger">
+      <!-- Toggle burger menu on mobile -->
+      {{ if or (ne .Site.Menus.burger nil) (ne .Site.Menus.nav nil) }}
+        <div class="burger {{ if eq .Site.Menus.burger nil }}only-mobile{{end}}">
           <div class="burger-bar burger-bar--top" style="background: {{ $color }}"></div>
           <div class="burger-bar burger-bar--mid" style="background: {{ $color }}"></div>
           <div class="burger-bar burger-bar--bottom" style="background: {{ $color }}"></div>
