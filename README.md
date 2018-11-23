@@ -2,9 +2,16 @@
 
 ## _Keep it simple, but not simpler_
 
-**Titi** is a Hugo theme written by [Datasketch](https://datasketch.co) 
+**Titi** is a Hugo theme written by [Datasketch](https://datasketch.co)
 
-Originally forked https://github.com/yihui/hugo-xmin
+Originally forked https://github.com/yihui/hugo-xmin.
+
+Give it a try, clone this repository and type the following command on your terminal:
+
+```sh
+# You must have hugo installed
+$ hugo server -s exampleSite
+```
 
 ## Site Configuration
 ### Navbar
