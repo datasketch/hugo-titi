@@ -1,4 +1,5 @@
 {{ define "main" }}
+  <div class="post__cover background" style="background-image: url({{ index .Params.images 0 | relURL }})"></div>
   <div class="post__container">
     <h1 class="post__title">{{ .Title }}</h1>
     <div class="post__body">
