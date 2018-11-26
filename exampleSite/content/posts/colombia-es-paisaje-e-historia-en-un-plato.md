@@ -7,6 +7,8 @@ images:
 - "/images/cover.jpg"
 # For custom color on anchor and blockquote tags, set this option and use the shortcodes.
 highlight: "#F1A208"
+# Hide title on render (default false)
+# hideTitle: false
 ---
 
 La cocina colombiana se puede definir con una palabra: diversidad. La topografía, la fauna y la flora del país hacen que hablar de un alimento o plato representativo sea imposible. La variedad de ingredientes, algunos propios y otros importados, y las múltiples formas de preparar los alimentos permitieron **la creación de al menos 700 recetas autóctonas.**

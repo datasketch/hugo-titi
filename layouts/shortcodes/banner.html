@@ -9,10 +9,12 @@
   class="column background"
 >
   <div class="container text-center" style="margin: auto">
-    <h1>{{ .Get "title" |  markdownify }}</h1>
-    <h2>{{ .Get "subtitle" | markdownify }}</h2>
+    <h1 class="banner__title">{{ .Get "title" |  markdownify }}</h1>
+    <h2 class="banner__subtitle">{{ .Get "subtitle" | markdownify }}</h2>
   </div>
   {{ if .Inner }}
-    <div class="container text-center">{{ .Inner }}</div>
+    <div class="container text-center">
+      <p class="banner__inner">{{ .Inner | markdownify }}</p>
+    </div>
   {{ end }}
 </section>

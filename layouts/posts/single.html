@@ -3,7 +3,9 @@
     <div class="post__cover background" style="background-image: url({{ index .Params.images 0 | relURL }})"></div>
   {{ end }}
   <div class="post__container">
-    <h1 class="post__title">{{ .Title }}</h1>
+    {{ if or (not .Params.hideTitle) (eq .Params.hideTitle nil) }}
+      <h1 class="post__title">{{ .Title }}</h1>
+    {{ end }}
     <div class="post__body">
       {{ .Content }}
     </div>
