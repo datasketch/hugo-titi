@@ -7,6 +7,8 @@ images:
 - "/images/cover.jpg"
 # For custom color on anchor and blockquote tags, set this option and use the shortcodes.
 highlight: "#F1A208"
+# Render cover image (default true)
+# cover: false
 # Hide title on render (default false)
 # hideTitle: false
 ---
