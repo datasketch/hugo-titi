@@ -5,6 +5,9 @@ themesDir = "../.."
 disqusShortname = "datasketch"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
+[blackfriday]
+  hrefTargetBlank = true
+
 [menu]
   [[menu.burger]]
     name = "Inicio"
