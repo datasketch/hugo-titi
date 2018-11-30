@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "http://example.com/ruta/"
 title = "Titi"
 theme = "hugo-titi"
 themesDir = "../.."
