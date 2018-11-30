@@ -12,3 +12,7 @@ title: Home
 >}}
   El gran esfuerzo que debe hacer el Estado para incentivarla educación es crear unas buenas condiciones de infraestructura, recursos didácticos, ambiente socioafectivo, y alianzas internacionales.
 {{< /banner >}}
+
+{{< iframe
+  url="https://s3.amazonaws.com/parkernetworks/index-1539797365871-carlos-enrique-moreno.html"
+>}}

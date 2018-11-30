@@ -16,6 +16,8 @@ menu: "burger"
 
 La cocina colombiana se puede definir con una palabra: diversidad. La topografía, la fauna y la flora del país hacen que hablar de un alimento o plato representativo sea imposible. La variedad de ingredientes, algunos propios y otros importados, y las múltiples formas de preparar los alimentos permitieron **la creación de al menos 700 recetas autóctonas.**
 
+{{< iframe url="https://s3.amazonaws.com/parkernetworks/index-1539797365871-carlos-enrique-moreno.html" >}}
+
 “En Colombia, las cocinas regionales tienen una variedad gigantesca”, explica el cocinero y antropólogo Julián Estrada. “Hay una diferencia entre La Guajira y el Pacífico, los santanderes y el Valle del Cauca”, agrega. Esto se debe a las seis regiones geográficas del país, que tienen una variedad de productos que supera incluso a las cocinas peruanas y mexicanas.
 
 “Si uno entiende bien la cocina colombiana ve que todos **esos platos cuentan una historia en particular: de las culturas que han vivido allí y de los ingredientes que abundan** en esa región”, explica Alejandro Gutiérrez, el cocinero del restaurante Salvo Patria.
