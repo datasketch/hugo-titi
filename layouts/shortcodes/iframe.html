@@ -15,5 +15,5 @@
   width: {{ default 100 ($global.Get `width`) }}%;
   padding-bottom: {{ default 56.25 ($global.Get `height`) }}%;"
 >
-  <iframe src="{{ .Get `url` }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="{{ .Get `url` }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" data-resize="{{ if .Get `resize`}}true{{else}}false{{end}}"></iframe>
 </div>
