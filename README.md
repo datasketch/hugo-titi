@@ -156,3 +156,21 @@ Also, a description (:bookmark:) can be given inside the body of the shortcode. 
   consectetur adipiscing elit. Etiam vel tincidunt lacus. Aliquam ex erat, venenatis in vehicula nec, aliquam ut turpis. Nam lobortis gravida ipsum, quis convallis nisi tempus vel. Donec interdum orci velit, at convallis neque venenatis id.
 {{< /banner >}}
 ```
+
+## iframe
+Use this shortcode to embed a document within the current document. It could receive three parameters: `url`, `width` and `resize`.
+
+By default, the width is set to 100%, however, if you set a different value, the height of the iframe will be calculated to maintain a 16:9 aspect ratio unless the `resize` option is set to `"true"`. In this case, the shortcode will use the [iFrame Resizer library](https://github.com/davidjbradshaw/iframe-resizer) to automatic resizing the contained content.
+
+```md
+<!-- Embed iframe with 100% width -->
+{{ < iframe url="http://example.com" >}}
+<!-- Embed iframe with 80% width -->
+{{< iframe url="http://example.com" width="80" >}}
+<!-- Embed iframe with 100% width and auto resize -->
+{{< iframe url="http://example.com" resize="true" }}
+<!-- Embed iframe with 60% width and auto resize -->
+{{< iframe url="http://example.com" width="60" resize="true" }}
+```
+
+:information_source: _Note that for embeding videos from Vimeo or Youtube is better to use Hugo's built-in shortcodes `{{< vimeo >}}` and `{{< youtube >}}`._
