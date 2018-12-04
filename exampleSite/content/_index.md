@@ -14,5 +14,7 @@ title: Home
 {{< /banner >}}
 
 {{< iframe
-  url="https://s3.amazonaws.com/parkernetworks/index-1539797365871-carlos-enrique-moreno.html"
+  url="https://randommonkey.shinyapps.io/elecciones-contratos-networks/"
+  resize="true"
+  width="95"
 >}}

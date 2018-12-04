@@ -7,13 +7,8 @@
 {{ end }}
 
 <div
-  style="position: relative;
-  height: 0;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  width: {{ default 100 ($global.Get `width`) }}%;
-  padding-bottom: {{ default 56.25 ($global.Get `height`) }}%;"
+  style="width: {{ default 100 ($global.Get `width`) }}%;padding-bottom: {{ default 56.25 ($global.Get `height`) }}%;"
+  class="iframe__container {{ if .Get `resize` }}resized{{end}}"
 >
-  <iframe src="{{ .Get `url` }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" data-resize="{{ if .Get `resize`}}true{{else}}false{{end}}"></iframe>
+  <iframe src="{{ .Get `url` }}" data-resize="{{ if .Get `resize` }}true{{else}}false{{end}}"></iframe>
 </div>
