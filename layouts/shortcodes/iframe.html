@@ -6,9 +6,6 @@
   {{ $global.Set "height" (div (mul (int $width) 9) 16.0) }}
 {{ end }}
 
-<div
-  style="width: {{ default 100 ($global.Get `width`) }}%;padding-bottom: {{ default 56.25 ($global.Get `height`) }}%;"
-  class="iframe__container {{ if .Get `resize` }}resized{{end}}"
->
-  <iframe src="{{ .Get `url` }}" data-resize="{{ if .Get `resize` }}true{{else}}false{{end}}"></iframe>
+<div style="width: {{ default 100 ($global.Get `width`) }}%;padding-bottom: {{ default 56.25 ($global.Get `height`) }}%;" class="iframe__container {{ if index .Params `resize` }}resized{{end}}">
+  <iframe src="{{ .Get `url` }}" {{if index .Params `resize`}}data-resize{{end}}></iframe>
 </div>

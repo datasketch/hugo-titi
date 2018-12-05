@@ -1,0 +1,12 @@
+<div class="slider swiper-container" {{if in .Params `pagination`}}data-pagination{{end}} {{if in .Params `navigation`}}data-navigation{{end}} {{if in .Params `loop`}}data-loop{{end}}>
+  <div class="swiper-wrapper">
+    {{ .Inner }}
+  </div>
+  {{ if in .Params "pagination" }}
+    <div class="swiper-pagination"></div>
+  {{ end }}
+  {{ if in .Params "navigation" }}
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  {{ end }}
+</div>
