@@ -185,6 +185,10 @@ It can be used with the following parameters:
 + pagination - add pagination bullets to the slider
 + loop - enable continuous loop mode
 + autoplay - enable slider autoplay in seconds
++ pc - numbers of slides per view in pc
++ tablet - numbers of slides per view in tablet
++ mobile - numbers of slides per view in mobile
++ gap - space between slides
 
 ```md
 {{< slider
@@ -193,6 +197,9 @@ It can be used with the following parameters:
   navigation="true" <!-- navigation="" -->
   loop="true" <!-- loop="" -->
   height="60" <!-- 75 by default -->
+  pc="3" <!-- 1 by default -->
+  tablet="2" <!-- 1 by default -->
+  mobile="1" <!-- 1 by default -->
 >}}
   ...
 {{< /slider >}}
