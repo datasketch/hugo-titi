@@ -3,6 +3,22 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{{ with .Site.Params.fonts.body }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
+<style>
+  html {
+    font-family: {{ index (split . ":") 0 }}, sans-serif;
+  }
+</style>
+{{ end }}
+{{ with .Site.Params.fonts.headings }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
+<style>
+  h1, h2, h3, h4, h5, h6 {
+    font-family: {{ index (split . ":") 0 }}, sans-serif;
+  }
+</style>
+{{ end }}
 <link rel="stylesheet" href='{{ "css/titi.css" | absURL }}'>
 {{ if .Site.Params.css }}
   {{ range .Site.Params.css }}

@@ -26,6 +26,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   css = []
   js = []
 
+  [params.fonts]
+    body = "Merriweather:300,400"
+    headings = "Lato:300,400"
+
   [params.nav]
     bg = "#eee"
     color = "black"
