@@ -129,11 +129,11 @@ highlight: "red"
 ```
 
 ## banner
-Render a banner and can be used with the following parameters
+Render a banner and can be used with the following parameters:
 
 :bookmark:: Accepts markdown syntax
 
-+ h - height of the banner in percentage **(required)**
++ height - height of the banner in percentage **(required)**
 + image - background image
 + bg - background color
 + color - text color
@@ -174,3 +174,47 @@ By default, the width is set to 100%, however, if you set a different value, the
 ```
 
 :information_source: _Note that for embeding videos from Vimeo or Youtube is better to use Hugo's built-in shortcodes `{{< vimeo >}}` and `{{< youtube >}}`._
+
+## slider
+This shortcode defines the main container of a slider. The inner body must only contain `slide` shortcode items, which are [defined later in the document](#slide).
+
+It can be used with the following parameters:
+
++ height - define slider height in percentage
++ navigation - add navigation arrows to the slider
++ pagination - add pagination bullets to the slider
++ loop - enable continuous loop mode
++ autoplay - enable slider autoplay in seconds
+
+```md
+{{< slider
+  autoplay="3.5"
+  pagination="true" <!-- pagination="" is also valid -->
+  navigation="true" <!-- navigation="" -->
+  loop="true" <!-- loop="" -->
+  height="60" <!-- 75 by default -->
+>}}
+  ...
+{{< /slider >}}
+```
+:information_source: _This shortcode is powered by the awesome [Swiper](https://github.com/nolimits4web/swiper) library._
+
+## slide
+This shortcode defines a slide within a [slider container](#slider). It can be used with the following parameters:
+
+:bookmark:: Accepts markdown syntax
+
++ bg - slide background color
++ color - slide text color
++ image - slide background image
++ title - slide title (:bookmark:)
+
+Also, a text (:bookmark:) can be given inside the body of the shortcode.
+
+```md
+{{< slider >}}
+  {{< slide title="Slide 1 title" bg="#0E0329" color="white" >}}{{< /slide >}}
+  {{< slide title="Slide 2 title" image="http://example.com/image.png" >}}Slide 2 text{{< /slide >}}
+{{< /slider >}}
+```
+:information_source: _This shortcode is powered by the awesome [Swiper](https://github.com/nolimits4web/swiper) library._
