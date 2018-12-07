@@ -36,7 +36,7 @@ Estos platillos, además de reflejar la realidad del paisaje, habla de las tradi
 
 “Yo crecí en Tame (Arauca) en las fincas de mi papá. Cuando cumplía años, mi papá me dejaba escoger la ternera que yo quisiera y empezábamos juntos el ritual para prepararla, que suele tomar un día entero”, recuerda Cadena quien celebró todos sus cumpleaños comiendo este platillo típico de los llanos y que se acompaña con yuca y papa.
 
-![](/images/img1.jpg)
+![Imagen 1](/images/img1.jpg)
 
 “A mí colombia me sabe a sancocho cocido en olla, sobre leña, a la vera del río Tame. Esos eran los planes que hacíamos con mi familia, a los que iba incluso mi abuela, y creo que reflejan la realidad de Colombia”, añade el chef.
 
@@ -74,7 +74,7 @@ Esto ha hecho que ya las academias de cocina o las universidades estén enseñan
 
 ## Proteger y rescatar la tradición colombiana
 
-![](/images/img2.jpg)
+![Imagen 2](/images/img2.jpg)
 
 “Rescatar nuestra comida se trata de crear lazos entre los comensales, los productores, los cocineros, las amas de casa… para que todos andemos para el mismo lado”, explica Iván Cadena, de Mesa Franca. “Todos debemos incluir en nuestras dietas, en nuestro día a día a Colombia… creo que ya vamos por buen camino para lograr que eso se consolide”, añade.
 
