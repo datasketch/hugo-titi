@@ -1,11 +1,11 @@
-<div class="slider swiper-container" {{if in .Params `pagination`}}data-pagination{{end}} {{if in .Params `navigation`}}data-navigation{{end}} {{if in .Params `loop`}}data-loop{{end}}>
+<div class="slider swiper-container" {{ if isset .Params `pagination` }}data-pagination{{ end }} {{ if isset .Params `navigation` }}data-navigation{{ end }} {{ if isset .Params `loop` }}data-loop{{ end }} {{ if index .Params `autoplay` }}data-autoplay="{{ .Get `autoplay` }}"{{ end }}{{ if index .Params `height` }}style="height: {{ .Get `height` }}vh;"{{ end }}>
   <div class="swiper-wrapper">
     {{ .Inner }}
   </div>
-  {{ if in .Params "pagination" }}
+  {{ if isset .Params "pagination" }}
     <div class="swiper-pagination"></div>
   {{ end }}
-  {{ if in .Params "navigation" }}
+  {{ if isset .Params "navigation" }}
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   {{ end }}

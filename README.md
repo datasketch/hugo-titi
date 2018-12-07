@@ -146,7 +146,7 @@ Also, a description (:bookmark:) can be given inside the body of the shortcode. 
 
 ```md
 {{< banner
-  h = "60"
+  height = "60"
   title = "Lorem ipsum"
   subtitle = "dolor sit amet"
   image = "https://images.unsplash.com/photo-1543536481-bf91777453de?ixlib=rb-0.3.5&s=0ffde0e2185104506c349126c687951c&auto=format&fit=crop&w=889&q=80"
