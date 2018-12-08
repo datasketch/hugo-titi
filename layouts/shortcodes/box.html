@@ -1,3 +1,3 @@
-<div class="box {{ with (.Get `mobile`) }}mobile-{{ . }}{{ end }} {{ with (.Get `tablet`) }}tablet-{{ . }}{{ end }} {{ with (.Get `pc`) }}pc-{{ . }}{{ end }}" style="color: {{ .Get `color` | default `inherit` }}; background-color: {{ .Get `bg` | default `inherit` }}">
+<div class="box {{ with (.Get `mobile`) }}mobile-{{ . }}{{ end }} {{ with (.Get `tablet`) }}tablet-{{ . }}{{ end }} {{ with (.Get `pc`) }}pc-{{ . }}{{ end }}" style="color: {{ .Get `color` | default `inherit` | safeCSS }}; background-color: {{ .Get `bg` | default `inherit` | safeCSS }}">
   {{ .Inner }}
 </div>
