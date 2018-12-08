@@ -225,3 +225,43 @@ Also, a text (:bookmark:) can be given inside the body of the shortcode.
 {{< /slider >}}
 ```
 :information_source: _This shortcode is powered by the awesome [Swiper](https://github.com/nolimits4web/swiper) library._
+
+## boxes
+This shortcode defines the main container for individiual `box` shortcode items, which are [defined later in the document](#box). This shortcode allows to split the screen into 12 columns.
+
+It can be used with the following parameters:
+
++ bg - background color
++ color - text color
++ height - min height
++ justify - start, center, end, between, around.
++ align - start, center, end.
+
+```md
+{{< boxes
+  bg="#c4117f"
+  color="white"
+  height="50"
+  justify="start"
+  align="center"
+>}}
+{{< /boxes >}}
+```
+
+## box
+This shortcode defines a box within a [boxes container](#boxes). It can be used with the following parameters:
+
++ mobile - number of columns in mobile
++ tablet - number of columns in tablet
++ pc - number of columns in pc
++ bg - box background color
++ color - box text color
+
+```md
+{{< boxes >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}1{{< /box >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}2{{< /box >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}3{{< /box >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}4{{< /box >}}
+{{< /boxes >}}
+```
