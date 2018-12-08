@@ -3,7 +3,7 @@
 
 <div
   class="burger-menu column v-centered"
-  style="background: {{ $bg }}; color: {{ $color }}"
+  style="background: {{ $bg | safeCSS }}; color: {{ $color | safeCSS }}"
 >
   <div class="container">
     <ul class="burger-menu--items">
