@@ -5,7 +5,7 @@
 {{ $logoWidth := .Site.Params.nav.logoWidth }}
 
 <header
-  style="background: {{ $bg }}; color: {{ $color }}"
+  style="background: {{ $bg | safeCSS }}; color: {{ $color | safeCSS }}"
   class="{{ if or (eq $fixed nil) ($fixed)}}fixed{{else}}no-fixed{{end}}"
 >
   <nav class="container line v-centered justify-between">
