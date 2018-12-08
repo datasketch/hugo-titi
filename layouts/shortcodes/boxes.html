@@ -1,0 +1,3 @@
+<div class="boxes line {{ with (.Get `justify`) }}justify-to-{{ . }}{{ end }} {{ with (.Get `align`) }}align-to-{{ . }}{{ end }}" style="min-height: {{ .Get `height` | default `auto` }}vh; color: {{ .Get `color` | default `inherit` }}; background-color: {{ .Get `bg` | default `inherit` }}">
+  {{ .Inner }}
+</div>
