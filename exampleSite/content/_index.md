@@ -4,7 +4,7 @@ title: Home
 {{< title color="#74D1F7" >}}anchor{{< /title >}}
 {{< title color="#74D1F7" >}}banner{{< /title >}}
 {{< title color="#74D1F7" >}}boxes - box{{< /title >}}
-{{< boxes height="50" bg="#ACD9C2" >}}
+{{< boxes height="50" bg="#ACD9C2" justify="center" >}}
   {{< box mobile="12" tablet="6" >}}BOX 1{{< /box >}}
 {{< /boxes >}}
 {{< title color="#74D1F7" >}}container{{< /title >}}
