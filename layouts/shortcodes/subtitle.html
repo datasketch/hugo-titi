@@ -1,0 +1,3 @@
+<h2 class="title" style="color: {{ .Get `color` | default `inherit` | safeCSS }};text-align: {{ .Get `align` | default `left` }};font-size: {{ .Get `size` }};font-family: {{ .Get `font` | default `inherit` }}">
+  {{ .Inner | markdownify }}
+</h2>

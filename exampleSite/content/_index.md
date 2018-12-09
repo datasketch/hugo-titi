@@ -1,7 +1,9 @@
 ---
 title: Home
 ---
-
+{{< title align="center" size="8rem" color="orange" >}}
+  Hola mundo
+{{< /title >}}
 <!-- {{< banner
   h = "60"
   title = "EDUCACIÓN TEMPRANA:"
