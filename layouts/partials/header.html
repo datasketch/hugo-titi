@@ -29,7 +29,7 @@
     <div class="nav__right line v-centered">
       {{ if .Site.Menus.nav }}
         {{ range .Site.Menus.nav }}
-          <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+          <a href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
       {{ end }}
       {{ if .Site.Params.social }}
