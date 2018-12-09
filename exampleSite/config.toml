@@ -27,6 +27,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   css = []
   js = []
 
+  # External css and js
+  [params.vendors]
+    css = []
+    js = []
+
   [params.fonts]
     body = "Merriweather:300,400"
     headings = "Lato:300,400"

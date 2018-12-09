@@ -12,7 +12,13 @@
 		</main>
 		{{ partial "footer.html" . }}
 	</div>
+	<!-- External JS -->
+	{{ range .Site.Params.vendors.js }}
+		<script src="{{ . }}" charset="utf-8"></script>
+	{{ end }}
+	<!-- Site JS -->
 	<script src='{{ "js/titi.js" | absURL }}'></script>
+	<!-- Custom js -->
 	{{ if .Site.Params.js }}
 		{{ range .Site.Params.js }}
 			<script src="{{ "/js/" | relURL }}{{ . }}" charset="utf-8"></script>

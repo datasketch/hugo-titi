@@ -1,25 +1,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{{ range .Site.Params.vendors.css }}
+  <!-- CSS vendors -->
+  <link rel="stylesheet" href="{{ . }}">
+{{ end }}
+
 {{ with .Site.Params.fonts.body }}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
-<style>
-  html {
-    font-family: {{ index (split . ":") 0 }}, sans-serif;
-  }
-</style>
+  <!-- Body font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
+  <style>
+    html {
+      font-family: {{ index (split . ":") 0 }}, sans-serif;
+    }
+  </style>
 {{ end }}
+
 {{ with .Site.Params.fonts.headings }}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
-<style>
-  h1, h2, h3, h4, h5, h6 {
-    font-family: {{ index (split . ":") 0 }}, sans-serif;
-  }
-</style>
+  <!-- Headings font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
+  <style>
+    h1, h2, h3, h4, h5, h6 {
+      font-family: {{ index (split . ":") 0 }}, sans-serif;
+    }
+  </style>
 {{ end }}
+
+<!-- Site CSS -->
 <link rel="stylesheet" href='{{ "css/titi.css" | absURL }}'>
+
+<!-- Custom CSS -->
 {{ if .Site.Params.css }}
   {{ range .Site.Params.css }}
     <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
