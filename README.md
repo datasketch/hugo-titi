@@ -180,7 +180,7 @@ By default, the width is set to 100%, however, if you set a different value, the
 
 ```md
 <!-- Embed iframe with 100% width -->
-{{ < iframe url="http://example.com" >}}
+{{< iframe url="http://example.com" >}}
 <!-- Embed iframe with 80% width -->
 {{< iframe url="http://example.com" width="80" >}}
 <!-- Embed iframe with 100% width and auto resize -->
