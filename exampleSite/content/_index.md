@@ -1,7 +1,7 @@
 ---
 title: Home
 ---
-# Titulo en Patua One
+{{< title >}}Title{{< /title >}}
 {{< banner height="100" title="" subtitle="líderes sociales en Colombia han sido asesinados desde el primero de Enero de 2016. Conoce más sobre ellos" bg="#2a2a2a" color="#ffffff" >}}{{< /banner >}}
 {{< jump 20 >}}
 {{< title align="center" size="32px" font="Lato"  >}}Líderes sociales{{< /title >}}
