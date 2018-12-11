@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Content }}
   <div class="container">
-    {{ range where .Pages "Section" "posts" }}
+    {{ range where .Site.RegularPages "Section" "posts" }}
       <div class="post-list-item">
         <div class="post-list-item__image">
           <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}">
