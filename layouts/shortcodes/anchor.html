@@ -1,3 +1,3 @@
-<a href="{{ .Get `url` }}" style="text-decoration: none; color: {{ $.Page.Params.highlight | default `inherit` | safeCSS }}">
+<a {{ with (.Get `class`) }}class="{{ . }}"{{ end }} {{ with (.Get `id`) }}id="{{ . }}"{{ end }} href="{{ .Get `url` }}" style="text-decoration: none; color: {{ $.Page.Params.highlight | default `inherit` | safeCSS }}">
   {{ .Inner }}
 </a>

@@ -1,4 +1,4 @@
-<section style="width: 100%;height: {{ .Get `height` | safeCSS }}vh;color: {{ .Get `color` | safeCSS }};{{ if .Get `image` }}background-image: url({{ .Get `image` | safeCSS | absURL }});{{end}}{{ if .Get `bg` }}background-color: {{ .Get `bg` | safeCSS }};{{end}}" class="column background banner">
+<section style="width: 100%;height: {{ .Get `height` | safeCSS }}vh;color: {{ .Get `color` | safeCSS }};{{ if .Get `image` }}background-image: url({{ .Get `image` | safeCSS | absURL }});{{end}}{{ if .Get `bg` }}background-color: {{ .Get `bg` | safeCSS }};{{end}}" class="column background banner {{ .Get `class` }}" {{ with (.Get `id`) }}id="{{ . }}"{{ end }}>
   <div class="container text-center" style="margin: auto">
     {{ if .Get `title` }}
       <h1 class="banner__title">{{ .Get "title" |  markdownify }}</h1>
