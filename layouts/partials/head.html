@@ -10,7 +10,7 @@
 
 {{ with .Site.Params.fonts.body }}
   <!-- Body font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
+  <link rel="stylesheet" href="{{ (printf `https://fonts.googleapis.com/css?family=%s` (replace . ` ` `+`)) | safeURL }}">
   <style>
     html {
       font-family: {{ index (split . ":") 0 }}, sans-serif;
@@ -20,7 +20,7 @@
 
 {{ with .Site.Params.fonts.headings }}
   <!-- Headings font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ replace . " " "+" }}">
+  <link rel="stylesheet" href="{{ (printf `https://fonts.googleapis.com/css?family=%s` (replace . ` ` `+`)) | safeURL }}">
   <style>
     h1, h2, h3, h4, h5, h6 {
       font-family: {{ index (split . ":") 0 }}, sans-serif;
