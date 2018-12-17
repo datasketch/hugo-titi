@@ -3,9 +3,11 @@
   <div class="container">
     {{ range where .Site.RegularPages "Section" "posts" }}
       <div class="post-list-item">
-        <div class="post-list-item__image">
-          <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}">
-        </div>
+        {{ if .Params.images }}
+          <div class="post-list-item__image">
+            <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}">
+          </div>
+        {{ end }}
         <div class="post-list-item__info">
           <h1 class="post-list-item__title">{{ .Title }}</h1>
           <small class="post-list-item__date">{{ .Date }}</small>
