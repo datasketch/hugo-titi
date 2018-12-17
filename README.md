@@ -113,13 +113,37 @@ The site will automatically load fonts from [Google Fonts](https://fonts.google.
   [params.fonts]
     # fonts for headings
     headings = "Lato"
-    # fonts for body
+    # fonts for body with light and regular weight
     body = "Merriweather:300,400"
 ```
 
 :information_source: Notice that there is no space after the comma when differents font weights are requested.
 
+### Custom CSS and JS files
+If you want to include your own `.css` or `.js` files to extend the styles or the interactivity shipped with the theme, you can set the `css` and `js` fields in the configuration file.
+
+The css files must be placed under `static/css` directory and the js files must be placed under `static/js` directory.
+
+```toml
+# config.toml
+[params]
+  css = ['my.css'] # note that just the filename is written
+  js = ['my.js']
+```
+
+### External CSS and JS files
+This is useful if you want to use third-party libraries for your website, like jQuery.
+
+```toml
+# config.toml
+[params]
+  [params.vendors]
+    css = []
+    js = ['https://code.jquery.com/jquery-3.3.1.min.js']
+```
+
 ## Shortcodes
+:point_up: For customization purposes, every shortcode accepts a parameter `id` and `class`. For instance `{{< anchor class="my-class" id="my-id">}}Anchor text{{< /anchor >}}`
 ## anchor
 The anchor shortcode changes the color of the `<a>` tag returned by the markdown parser. It works along with the `higlight` color parameter, if available, in the front matter configuration of your posts.
 
@@ -130,18 +154,6 @@ highlight: "red"
 ---
 
 {{< anchor url="http://example.com/" >}} Anchor text {{< /anchor >}}
-```
-
-## quote
-Same as [anchor](#anchor)
-
-```md
----
-title: "Sample post"
-highlight: "red"
----
-
-{{< quote >}} Quote text {{< /quote >}}
 ```
 
 ## banner
@@ -173,6 +185,79 @@ Also, a description (:bookmark:) can be given inside the body of the shortcode. 
 {{< /banner >}}
 ```
 
+## boxes
+This shortcode defines the main container for individiual `box` shortcode items, which are [defined later in the document](#box). This shortcode allows to split the screen into 12 columns.
+
+It can be used with the following parameters:
+
++ bg - background color
++ color - text color
++ height - min height
++ justify - start, center, end, between, around.
++ align - start, center, end.
+
+```md
+{{< boxes
+  bg="#c4117f"
+  color="white"
+  height="50"
+  justify="start"
+  align="center"
+>}}
+{{< /boxes >}}
+```
+
+## box
+This shortcode defines a box within a [boxes container](#boxes). It can be used with the following parameters:
+
++ mobile - number of columns in mobile
++ tablet - number of columns in tablet
++ pc - number of columns in pc
++ bg - box background color
++ color - box text color
+
+```md
+{{< boxes >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}1{{< /box >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}2{{< /box >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}3{{< /box >}}
+  {{< box mobile="12" tablet="6" pc="3" >}}4{{< /box >}}
+{{< /boxes >}}
+```
+
+## container
+Wrap content inside a container. For a shrinked container use the `small` parameter:
+
+```md
+{{< container >}}
+  Markdown content, shortcodes or both
+{{< /container >}}
+
+{{< container small="" >}}
+{{< /container >}}
+```
+
+## cta
+Render a call to action button. It can be used with the following parameters:
+
++ href - redirect url
++ bg - background color
++ color - text color
++ round - button's border radius
++ external - open href value in another tab
++ size - button's font size
++ align - button's position
+
+```md
+{{< cta
+  href = "/another-page"
+  bg = "#d1495b"
+  color = "white"
+  round = "20"
+  size = "15px"
+  align = "center" >}}Call to action text{{< /cta >}}
+```
+
 ## iframe
 Use this shortcode to embed a document within the current document. It could receive three parameters: `url`, `width` and `resize`.
 
@@ -190,6 +275,35 @@ By default, the width is set to 100%, however, if you set a different value, the
 ```
 
 :information_source: _Note that for embeding videos from Vimeo or Youtube is better to use Hugo's built-in shortcodes `{{< vimeo >}}` and `{{< youtube >}}`._
+
+## img_coin
+Render a circular image. It can be used with the following parameters:
+
++ url - image source
++ size - image size
+
+```md
+{{< img_coin url = "http://so.me/image.png" size = "150" >}}
+```
+
+## jump
+Add an empty space in `px` units.
+
+```md
+{{< jump 20 >}}
+```
+
+## quote
+Same as [anchor](#anchor)
+
+```md
+---
+title: "Sample post"
+highlight: "red"
+---
+
+{{< quote >}} Quote text {{< /quote >}}
+```
 
 ## slider
 This shortcode defines the main container of a slider. The inner body must only contain `slide` shortcode items, which are [defined later in the document](#slide).
@@ -242,42 +356,32 @@ Also, a text (:bookmark:) can be given inside the body of the shortcode.
 ```
 :information_source: _This shortcode is powered by the awesome [Swiper](https://github.com/nolimits4web/swiper) library._
 
-## boxes
-This shortcode defines the main container for individiual `box` shortcode items, which are [defined later in the document](#box). This shortcode allows to split the screen into 12 columns.
+## title
+Useful for render a `<h1>` heading. It can be used with the following parameters:
 
-It can be used with the following parameters:
-
-+ bg - background color
 + color - text color
-+ height - min height
-+ justify - start, center, end, between, around.
-+ align - start, center, end.
++ align - text align
++ size - font size
++ font - font family
++ weight - font-weight
 
 ```md
-{{< boxes
-  bg="#c4117f"
-  color="white"
-  height="50"
-  justify="start"
-  align="center"
->}}
-{{< /boxes >}}
+{{< title
+  color = "#2a2a2a"
+  align = "center"
+  size = "35px"
+  font = "Lato"
+  weight = "300">}}Title text{{< /title >}}
 ```
 
-## box
-This shortcode defines a box within a [boxes container](#boxes). It can be used with the following parameters:
-
-+ mobile - number of columns in mobile
-+ tablet - number of columns in tablet
-+ pc - number of columns in pc
-+ bg - box background color
-+ color - box text color
+## subtitle
+Useful for render a `<h2>` heading. It can be used with the same [title](#title) parameters:
 
 ```md
-{{< boxes >}}
-  {{< box mobile="12" tablet="6" pc="3" >}}1{{< /box >}}
-  {{< box mobile="12" tablet="6" pc="3" >}}2{{< /box >}}
-  {{< box mobile="12" tablet="6" pc="3" >}}3{{< /box >}}
-  {{< box mobile="12" tablet="6" pc="3" >}}4{{< /box >}}
-{{< /boxes >}}
+{{< subtitle
+  color = "#2a2a2a"
+  align = "center"
+  size = "22px"
+  font = "Lato"
+  weight = "300">}}Title text{{< /subtitle >}}
 ```
