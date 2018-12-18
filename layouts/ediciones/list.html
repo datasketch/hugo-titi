@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ .Content }}
-  <div class="container container_sm">
+  <div class="container container_md">
     {{ range where .Site.RegularPages "Section" "posts" }}
       <div class="post-list-item">
         {{ if .Params.images }}
