@@ -258,6 +258,15 @@ Render a call to action button. It can be used with the following parameters:
   align = "center" >}}Call to action text{{< /cta >}}
 ```
 
+## full_width
+Force content to span all the width available in the current screen.
+
+```md
+{{< full_width >}}
+  ...
+{{< /full_width >}}
+```
+
 ## iframe
 Use this shortcode to embed a document within the current document. It could receive three parameters: `url`, `width` and `resize`.
 
