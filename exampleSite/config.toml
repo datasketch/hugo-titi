@@ -1,0 +1,21 @@
+baseURL = "/"
+languageCode = "es-es"
+title = "Hugo Titi"
+theme = "hugo-titi"
+themesDir = "../.."
+
+[params]
+  [params.social]
+    facebook = "https://es-la.facebook.com/datasketch/"
+    twitter = "https://twitter.com/datasketch"
+    email = "info@datasketch.co"
+  
+  [params.footer]
+    # The path inside the static folder
+    # Note there is no leading nor trailing slash
+    logo = "images/datasketch-vertical.svg"
+
+    bg_color = ""
+    text_color = ""
+    bg_color_class = "bg-gray-900"
+    text_color_class = "text-white"
