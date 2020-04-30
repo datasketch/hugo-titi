@@ -10,15 +10,21 @@
     <div class="w-full md:w-1/3 flex flex-col items-center  mt-10 md:mt-0">
       <p class="uppercase text-xl font-bold">Comparte</p>
       <div class="flex items-center mt-4">
-        <a class="mr-4" href="{{ $.Site.Params.social.twitter }}" target="_blank" rel="noopener noreferrer">
-          <img src='{{ "images/tw.svg" | absURL }}' alt="">
-        </a>
-        <a class="mr-4" href="mailto:{{ $.Site.Params.social.email }}">
-          <img src='{{ "images/mail.svg" | absURL }}' alt="">
-        </a>
-        <a class="mr-0" href="{{ $.Site.Params.social.facebook }}" target="_blank" rel="noopener noreferrer">
-          <img src='{{ "images/fb.svg" | absURL }}' alt="">
-        </a>
+        {{ if isset $.Site.Params.social "twitter" }}
+          <a class="mr-4" href="{{ $.Site.Params.social.twitter }}" target="_blank" rel="noopener noreferrer">
+            <img src='{{ "images/tw.svg" | absURL }}' alt="">
+          </a>
+        {{ end }}
+        {{ if isset $.Site.Params.social "email" }}
+          <a class="mr-4" href="mailto:{{ $.Site.Params.social.email }}">
+            <img src='{{ "images/mail.svg" | absURL }}' alt="">
+          </a>
+        {{ end }}
+        {{ if isset $.Site.Params.social "facebook" }}
+          <a class="mr-0" href="{{ $.Site.Params.social.facebook }}" target="_blank" rel="noopener noreferrer">
+            <img src='{{ "images/fb.svg" | absURL }}' alt="">
+          </a>
+        {{ end }}
       </div>
     </div>
     <div class="w-full md:w-1/3 flex flex-col items-center mt-10 md:mt-0">

@@ -9,6 +9,18 @@ themesDir = "../.."
     facebook = "https://es-la.facebook.com/datasketch/"
     twitter = "https://twitter.com/datasketch"
     email = "info@datasketch.co"
+
+  [params.header]
+    logo = "images/datasketch.svg"
+    bg_color = ""
+    text_color = "#ffffff"
+    bg_color_class = "bg-teal-600"
+    text_color_class = ""
+    # One of
+    # sticky: always sticky on top
+    # normal: static positioned
+    # mixed: sticky after first child element of #content is offscreen
+    behavior = "mixed"
   
   [params.footer]
     # The path inside the static folder

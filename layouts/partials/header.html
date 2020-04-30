@@ -1,0 +1,33 @@
+{{ with .Site.Params.header }}
+<header id="main-header" data-config="{{ jsonify . }}" class="w-full h-16 px-4">
+  <nav class="h-full flex items-center justify-between">
+    <!-- brand -->
+    <div class="w-full flex justify-between items-center md:w-auto">
+      <a href="{{ .Site.BaseURL }}">
+        <img class="max-w-xs" src="{{ .logo | absURL }}" alt="">
+      </a>
+      <button style="color: {{ .text_color }};" class="{{ .text_color_class }} md:hidden">
+        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
+      </button>
+    </div>
+    <!-- navlinks -->
+    <div class="hidden md:flex md:space-x-4">
+      {{ if isset $.Site.Params.social "twitter" }}
+        <a href="{{ $.Site.Params.social.twitter }}" target="_blank" rel="noopener noreferrer">
+          <img src='{{ "images/tw.svg" | absURL }}' alt="">
+        </a>
+      {{ end }}
+      {{ if isset $.Site.Params.social "email" }}
+        <a href="mailto:{{ $.Site.Params.social.email }}">
+          <img src='{{ "images/mail.svg" | absURL }}' alt="">
+        </a>
+      {{ end }}
+      {{ if isset $.Site.Params.social "facebook" }}
+        <a href="{{ $.Site.Params.social.facebook }}" target="_blank" rel="noopener noreferrer">
+          <img src='{{ "images/fb.svg" | absURL }}' alt="">
+        </a>
+      {{ end }}
+    </div>
+  </nav>
+</header>
+{{ end }}
