@@ -68,8 +68,8 @@ const configHeader = () => {
     const observer = new IntersectionObserver((entries, observer) => {
       const observedEntry = entries[0];
       if (observedEntry.isIntersecting) {
-        header.classList.remove('absolute');
-        header.classList.add('fixed');
+        header.classList.remove('fixed');
+        header.classList.add('absolute');
         bg_color_class && header.classList.remove(bg_color_class);
         header.style.backgroundColor = '';
       } else {
