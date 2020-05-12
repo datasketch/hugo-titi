@@ -1,0 +1,136 @@
+{{ $globals := newScratch }}
+
+<!-- Get margin params -->
+{{ $m_top := (or .Params.margin_y .Params.margin_top | default 0) }}
+{{ $m_right := (or .Params.margin_x .Params.margin_right | default 0) }}
+{{ $m_bottom := (or .Params.margin_y .Params.margin_bottom | default 0) }}
+{{ $m_left := (or .Params.margin_x .Params.margin_left | default 0) }}
+
+<!-- Get padding params -->
+{{ $p_top := (or .Params.padding_y .Params.padding_top | default 0) }}
+{{ $p_right := (or .Params.padding_x .Params.padding_right | default 0) }}
+{{ $p_bottom := (or .Params.padding_y .Params.padding_bottom | default 0) }}
+{{ $p_left := (or .Params.padding_x .Params.padding_left | default 0) }}
+
+<!-- Parse params -->
+{{ $m_constraints := slice $m_top $m_right $m_bottom $m_left }}
+{{ $p_constraints := slice $p_top $p_right $p_bottom $p_left }}
+{{ $bg_image := .Params.bg_image }}
+{{ $bg_color := .Params.bg_color }}
+{{ $text_color := .Params.text_color }}
+{{ $title := .Params.title }}
+{{ $subtitle := .Params.subtitle }}
+{{ $lead := .Params.lead }}
+{{ $separator := .Params.separator }}
+{{ $separator_width := .Params.separator_width }}
+{{ $separator_height := .Params.separator_height }}
+{{ $separator_bg_color := .Params.separator_bg_color }}
+{{ $separator_bg_image := .Params.separator_image }}
+{{ $align := .Params.align }}
+
+{{ $margin := delimit (apply $m_constraints "print" "." "px") " " }}
+{{ $padding := delimit (apply $p_constraints "print" "." "px") " " }}
+
+<!-- Global styles -->
+{{ $globals.Set "styles" (print "margin:" $margin ";padding:" $padding ";") }}
+{{ $globals.Set "separator" "" }}
+{{ $globals.Set "class" "flex flex-col" }}
+<!-- Used for inner div -->
+{{ $globals.Set "text_align" "left" }}
+
+{{ if $bg_image }}
+  {{ $styles := $globals.Get "styles" }}
+  {{ $globals.Set "styles" (print $styles "background-image:url(" $bg_image ");background-position:center;background-repeat:no-repeat;background-size:cover;") }}
+{{ end }}
+
+{{ if $bg_color }}
+  {{ $styles := $globals.Get "styles" }}
+  {{ $globals.Set "styles" (print $styles "background-color:" $bg_color ";") }}
+{{ end }}
+
+{{ if $text_color }}
+  {{ $styles := $globals.Get "styles" }}
+  {{ $globals.Set "styles" (print $styles "color:" $text_color ";") }}
+{{ end }}
+
+<!-- Separator styles -->
+{{ if $separator_width }}
+  {{ $sep := $globals.Get "separator" }}
+  {{ $globals.Set "separator" (print $sep "max-width:100%;width:" $separator_width "px;") }}
+{{ end }}
+
+{{ if $separator_height }}
+  {{ $sep := $globals.Get "separator" }}
+  {{ $globals.Set "separator" (print $sep "height:" $separator_height "px;") }}
+{{ end }}
+
+{{ if $separator_bg_color }}
+  {{ $sep := $globals.Get "separator" }}
+  {{ $globals.Set "separator" (print $sep "background-color:" $separator_bg_color ";") }}
+{{ end }}
+
+{{ if $separator_bg_image }}
+  {{ $sep := $globals.Get "separator" }}
+  {{ $globals.Set "separator" (print $sep "background-image:url(" $separator_bg_image ");background-position:center;background-repeat:no-repeat;background-size:contain;") }}
+{{ end }}
+
+{{ if and $align (eq $align "center") }}
+  {{ $sep := $globals.Get "separator" }}
+  {{ $globals.Set "separator" (print $sep "margin-left:auto;margin-right:auto;") }}
+{{ end }}
+
+{{ if and $align (eq $align "end") }}
+  {{ $sep := $globals.Get "separator" }}
+  {{ $globals.Set "separator" (print $sep "margin-left:auto;") }}
+{{ end }}
+
+<!-- Class join -->
+{{ if .Get "class" }}
+  {{ $cls := $globals.Get "class" }}
+  {{ $globals.Set "class" (print $cls " " (.Get "class")) }}
+{{ end }}
+
+{{ if $align }}
+  {{ $cls := $globals.Get "class" }}
+  {{ $globals.Set "class" (print $cls " items-" $align) }}
+{{ end }}
+
+{{ if and $align (eq $align "center") }}
+  {{ $globals.Set "text_align" "center" }}
+{{ end }}
+
+{{ if and $align (eq $align "end") }}
+  {{ $globals.Set "text_align" "right" }}
+{{ end }}
+
+<div
+  {{ with ($globals.Get "class")}} class="{{ . }}" {{ end }}
+  {{ with .Get "id" }} id="{{ . }}" {{ end }}
+  style='{{ $globals.Get "styles" | safeCSS }}'
+>
+  <div class='w-full md:w-2/3{{ with $globals.Get "text_align" }} text-{{ . }}{{ end }}'>
+    {{ if $title }}
+      <!-- extend customization with .banner-title class -->
+      <h1 class="banner-title flex flex-col leading-none text-6xl">
+        <span>{{ $title }}</span>
+        {{ if $subtitle }}
+          <span>{{ $subtitle }}</span>
+        {{ end }}
+      </h1>
+    {{ end }}
+    {{ if $lead }}
+      <!-- extend customization with .banner-lead class -->
+      <p class="banner-lead mt-2 text-xl">{{ $lead }}</p>
+    {{ end }}
+    {{ if $separator }}
+      <!-- extend customization with .banner-separator class -->
+      <div class="banner-separator mt-6" style='{{ $globals.Get "separator" | safeCSS }}'></div>
+    {{ end }}
+    {{ if .Inner }}
+      <!-- extend customization with .banner-summary class -->
+      <div class="banner-summary text-lg mt-8">
+        {{ .Inner | $.Page.RenderString (dict "display" "block") }}
+      </div>
+    {{ end }}
+  </div>
+</div>
