@@ -18,8 +18,8 @@
 {{ $bg_image := .Params.bg_image }}
 {{ $bg_color := .Params.bg_color }}
 {{ $text_color := .Params.text_color }}
-{{ $title := .Params.title }}
-{{ $subtitle := .Params.subtitle }}
+{{ $top_title := .Params.top_title }}
+{{ $bottom_title := .Params.bottom_title }}
 {{ $lead := .Params.lead }}
 {{ $separator := .Params.separator }}
 {{ $separator_width := .Params.separator_width }}
@@ -27,6 +27,7 @@
 {{ $separator_bg_color := .Params.separator_bg_color }}
 {{ $separator_bg_image := .Params.separator_image }}
 {{ $align := .Params.align }}
+{{ $leading_image := .Params.leading_image }}
 
 {{ $margin := delimit (apply $m_constraints "print" "." "px") " " }}
 {{ $padding := delimit (apply $p_constraints "print" "." "px") " " }}
@@ -37,6 +38,8 @@
 {{ $globals.Set "class" "flex flex-col" }}
 <!-- Used for inner div -->
 {{ $globals.Set "text_align" "left" }}
+<!-- Used for leading image -->
+{{ $globals.Set "leading_image_class" "mb-2 max-w-full" }}
 
 {{ if $bg_image }}
   {{ $styles := $globals.Get "styles" }}
@@ -84,7 +87,7 @@
   {{ $globals.Set "separator" (print $sep "margin-left:auto;") }}
 {{ end }}
 
-<!-- Class join -->
+<!-- Outer div class def -->
 {{ if .Get "class" }}
   {{ $cls := $globals.Get "class" }}
   {{ $globals.Set "class" (print $cls " " (.Get "class")) }}
@@ -103,18 +106,32 @@
   {{ $globals.Set "text_align" "right" }}
 {{ end }}
 
+<!-- Leading image -->
+{{ if and $align (eq $align "center") }}
+  {{ $li := $globals.Get "leading_image_class" }}
+  {{ $globals.Set "leading_image_class" (print $li " mx-auto") }}
+{{ end }}
+
+{{ if and $align (eq $align "end") }}
+{{ $li := $globals.Get "leading_image_class" }}
+{{ $globals.Set "leading_image_class" (print $li " ml-auto") }}
+{{ end }}
+
 <div
   {{ with ($globals.Get "class")}} class="{{ . }}" {{ end }}
   {{ with .Get "id" }} id="{{ . }}" {{ end }}
   style='{{ $globals.Get "styles" | safeCSS }}'
 >
   <div class='w-full md:w-2/3{{ with $globals.Get "text_align" }} text-{{ . }}{{ end }}'>
-    {{ if $title }}
-      <!-- extend customization with .banner-title class -->
+    {{ if $leading_image }}
+      <img class='{{ $globals.Get "leading_image_class" }}' src="{{ $leading_image }}" alt="">
+    {{ end }}
+    {{ if $top_title }}
+      <!-- extend customization with .banner-title, banner-title-top and banner-title-bottom class -->
       <h1 class="banner-title flex flex-col leading-none text-6xl">
-        <span>{{ $title }}</span>
-        {{ if $subtitle }}
-          <span>{{ $subtitle }}</span>
+        <span class="banner-title-top">{{ $top_title }}</span>
+        {{ if $bottom_title }}
+          <span class="banner-title-bottom">{{ $bottom_title }}</span>
         {{ end }}
       </h1>
     {{ end }}
