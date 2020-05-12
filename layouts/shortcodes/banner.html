@@ -20,7 +20,7 @@
 {{ $text_color := .Params.text_color }}
 {{ $top_title := .Params.top_title }}
 {{ $bottom_title := .Params.bottom_title }}
-{{ $lead := .Params.lead }}
+{{ $subtitle := .Params.subtitle }}
 {{ $separator := .Params.separator }}
 {{ $separator_width := .Params.separator_width }}
 {{ $separator_height := .Params.separator_height }}
@@ -135,17 +135,17 @@
         {{ end }}
       </h1>
     {{ end }}
-    {{ if $lead }}
-      <!-- extend customization with .banner-lead class -->
-      <p class="banner-lead mt-2 text-xl">{{ $lead }}</p>
+    {{ if $subtitle }}
+      <!-- extend customization with .banner-subtitle class -->
+      <p class="banner-subtitle mt-2 text-xl">{{ $subtitle }}</p>
     {{ end }}
     {{ if $separator }}
       <!-- extend customization with .banner-separator class -->
       <div class="banner-separator mt-6" style='{{ $globals.Get "separator" | safeCSS }}'></div>
     {{ end }}
     {{ if .Inner }}
-      <!-- extend customization with .banner-summary class -->
-      <div class="banner-summary text-lg mt-8">
+      <!-- extend customization with .banner-lead class -->
+      <div class="banner-lead text-lg mt-8">
         {{ .Inner | $.Page.RenderString (dict "display" "block") }}
       </div>
     {{ end }}
