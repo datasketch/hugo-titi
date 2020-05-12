@@ -31,3 +31,10 @@ themesDir = "../.."
     text_color = ""
     bg_color_class = "bg-gray-900"
     text_color_class = "text-white"
+
+  [[params.fonts]]
+    family = "Montserrat"
+    weight = [400, 500]
+  
+  [[params.fonts]]
+    family = "PT Serif"

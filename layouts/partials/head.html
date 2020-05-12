@@ -1,6 +1,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href='{{ "css/tailwind-1.3.5.min.css" | absURL }}'>
+
+{{ $globals := newScratch }}
+{{ $globals.Set "fonts" slice }}
+
+{{ if .Site.Params.fonts }}
+  {{ range $font := .Site.Params.fonts }}
+    {{ $font_family := replace $font.family " " "+" }}
+    {{ if $font.weight }}
+      {{ $font_family = print $font_family ":" (delimit $font.weight ",") }}
+    {{ end }}
+    {{ $globals.Add "fonts" $font_family }}
+  {{ end }}
+  {{ $families := delimit ($globals.Get "fonts") "|" }}
+  {{ $googleFontsURL := print "https://fonts.googleapis.com/css?family=" $families }}
+  <link rel="stylesheet" href="{{ $googleFontsURL | safeHTMLAttr }}">
+{{ end }}
+
 {{ if .Title }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ else }}
