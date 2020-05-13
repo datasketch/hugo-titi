@@ -1,3 +1,0 @@
-<div {{ with (.Get `id`) }}id="{{ . }}"{{ end }} class="boxes line {{ .Get `class` }}" style="min-height: {{ .Get `height` | default `auto` }}vh; color: {{ .Get `color` | default `inherit` | safeCSS }}; background-color: {{ .Get `bg` | default `inherit` | safeCSS }}" {{ with (.Get `justify`) }}data-justify="{{ . }}"{{ end }} {{ with (.Get `align`) }} data-align="{{ . }}"{{ end }}>
-  {{ .Inner | markdownify }}
-</div>

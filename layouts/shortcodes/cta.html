@@ -1,3 +1,0 @@
-<p {{ with (.Get `class`) }}class="{{ . }}"{{ end }} {{ with (.Get `id`) }}id="{{ . }}"{{ end }} style="text-align: {{ .Get `align` | default `left` }};font-size: {{ .Get `size` | default `inherit` }}">
-  <a class="cta" href="{{ .Get `url` }}" style="background-color: {{ .Get `bg` | default `inherit` | safeCSS }};color: {{ .Get `color` | default `inherit` | safeCSS }};border-radius: {{ .Get `round` | default 0 }}px;text-decoration: none;padding: 10px 20px; display: inline-block" target="{{ if isset .Params `external` }}_blank{{ else }}_self{{ end }}">{{ .Inner | markdownify }}</a>
-</p>

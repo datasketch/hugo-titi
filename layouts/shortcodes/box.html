@@ -1,3 +1,0 @@
-<div {{ with (.Get `id`) }}id="{{ . }}"{{ end }} class="box {{ .Get `class` }}" style="color: {{ .Get `color` | default `inherit` | safeCSS }}; background-color: {{ .Get `bg` | default `inherit` | safeCSS }}" {{ with (.Get `mobile`) }}data-mobile="{{ . }}"{{ end }} {{ with (.Get `tablet`) }}data-tablet="{{ . }}"{{ end }} {{ with (.Get `pc`) }}data-pc="{{ . }}"{{ end }}>
-{{ .Inner | markdownify }}
-</div>

@@ -1,3 +1,0 @@
-<blockquote {{ with (.Get `id`) }}id="{{ . }}"{{ end }} {{ with (.Get `class`) }}class="{{ . }}"{{ end }} style="border-left-color: {{ $.Page.Params.highlight | default `inherit` | safeCSS }}">
-  <p>{{ .Inner }}</p>
-</blockquote>

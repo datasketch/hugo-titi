@@ -1,1 +1,0 @@
-<img {{ with (.Get `id`) }}id="{{ . }}"{{ end }} {{ with (.Get `class`) }}class="{{ . }}"{{ end }} src="{{ .Get `url` | safeHTML | safeURL }}" style="width: {{ .Get `size` | default 64 }}px; height: {{ .Get `size` | default 64 }}px;border-radius: 50%">
