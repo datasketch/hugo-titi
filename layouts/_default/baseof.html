@@ -1,28 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html>
 	{{ partial "head.html" . }}
-</head>
-<body>
-	<div id="wrapper" class="column">
-		{{ partial "menu" . }}
+
+	<body>
 		{{ partial "header.html" . }}
-		<main id="content" class="column item-fill">
+		<main id="main-content">
 			{{ block "main" . }}{{ end }}
 		</main>
 		{{ partial "footer.html" . }}
-	</div>
-	<!-- External JS -->
-	{{ range .Site.Params.vendors.js }}
-		<script src="{{ . }}" charset="utf-8"></script>
-	{{ end }}
-	<!-- Site JS -->
-	<script src='{{ "js/titi.js" | absURL }}'></script>
-	<!-- Custom js -->
-	{{ if .Site.Params.js }}
-		{{ range .Site.Params.js }}
-			<script src="{{ "/js/" | relURL }}{{ . }}" charset="utf-8"></script>
-		{{ end }}
-	{{ end }}
-</body>
+		<script src='{{ "js/header.js" | absURL }}'></script>
+	</body>
+
 </html>

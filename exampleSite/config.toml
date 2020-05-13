@@ -1,55 +1,40 @@
 baseURL = "/"
-title = "Titi"
+languageCode = "es-es"
+title = "Hugo Titi"
 theme = "hugo-titi"
 themesDir = "../.."
-publishDir = "docs"
-disqusShortname = "datasketch"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-
-[blackfriday]
-  hrefTargetBlank = true
-
-[menu]
-  [[menu.nav]]
-    name = "Metodología"
-    url = "/metodologia"
-    weight = 1
 
 [params]
-  # SEO general site description
-  description = "Site SEO description"
+  [params.social]
+    facebook = "https://es-la.facebook.com/datasketch/"
+    twitter = "https://twitter.com/datasketch"
+    email = "info@datasketch.co"
 
-  # Custom css and js
-  css = ['lideres.css']
-  js = []
-
-  # External css and js
-  [params.vendors]
-    css = []
-    js = []
-
-  [params.fonts]
-    headings = "Patua One"
-
-  [params.nav]
-    bg = "#2a2a2a"
-    color = "#ffffff"
-    logo = "images/ds-logo.svg"
-    logoWidth = "150px"
-    # Optional, true by default
-    # fixed = true
-
-  [[params.social]]
-    icon = "twitter"
-    url = "https://twitter.com/datasketch"
-  [[params.social]]
-    icon = "facebook"
-    url = "https://www.facebook.com/datasketch/"
-  [[params.social]]
-    icon = "instagram"
-    url = "https://www.instagram.com/datasketch/"
-
+  [params.header]
+    logo = "images/datasketch.svg"
+    bg_color = ""
+    text_color = "#ffffff"
+    bg_color_class = "bg-gray-800"
+    text_color_class = ""
+    # One of
+    # sticky: always sticky on top
+    # normal: static positioned
+    # mixed: sticky after first child element of #content is offscreen
+    behavior = "sticky"
+  
   [params.footer]
-    text = "Todo el material en esta página es [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). Si reusas o adaptas recursos de esta página, por favor vincula y referencia nuestro artículo o sitio web."
-    bg = "black"
-    color = "white"
+    # The path inside the static folder
+    # Note there is no leading nor trailing slash
+    logo = "images/datasketch-vertical.svg"
+
+    bg_color = ""
+    text_color = ""
+    bg_color_class = "bg-gray-900"
+    text_color_class = "text-white"
+
+  [[params.fonts]]
+    family = "Montserrat"
+    weight = [400, 500]
+  
+  [[params.fonts]]
+    family = "PT Serif"

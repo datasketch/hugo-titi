@@ -35,7 +35,8 @@
 <!-- Global styles -->
 {{ $globals.Set "styles" (print "margin:" $margin ";padding:" $padding ";") }}
 {{ $globals.Set "separator" "" }}
-{{ $globals.Set "class" "flex flex-col" }}
+<!-- Used for outer-div -->
+{{ $globals.Set "class" "order-0 w-full md:w-1/2" }}
 <!-- Used for inner div -->
 {{ $globals.Set "text_align" "left" }}
 <!-- Used for leading image -->
@@ -122,22 +123,22 @@
   {{ with .Get "id" }} id="{{ . }}" {{ end }}
   {{ with ($globals.Get "styles") }} style="{{ . | safeCSS }}" {{ end }}
 >
-  <div class='w-full md:w-2/3{{ with $globals.Get "text_align" }} text-{{ . }}{{ end }}'>
+  <div class='w-full {{ with $globals.Get "text_align" }} text-{{ . }}{{ end }}'>
     {{ if $leading_image }}
       <img class='{{ $globals.Get "leading_image_class" }}' src="{{ $leading_image }}" alt="">
     {{ end }}
     {{ if $top_title }}
       <!-- extend customization with .banner-title, banner-title-top and banner-title-bottom class -->
-      <h1 class="banner-title flex flex-col leading-none text-6xl">
+      <h2 class="banner-title flex flex-col leading-none text-4xl">
         <span class="banner-title-top">{{ $top_title }}</span>
         {{ if $bottom_title }}
           <span class="banner-title-bottom">{{ $bottom_title }}</span>
         {{ end }}
-      </h1>
+      </h2>
     {{ end }}
     {{ if $subtitle }}
       <!-- extend customization with .banner-subtitle class -->
-      <h2 class="banner-subtitle mt-2 text-xl">{{ $subtitle }}</h3>
+      <h3 class="banner-subtitle mt-2 text-xl">{{ $subtitle }}</h3>
     {{ end }}
     {{ if $separator }}
       <!-- extend customization with .banner-separator class -->

@@ -1,64 +1,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-{{ range .Site.Params.vendors.css }}
-  <!-- CSS vendors -->
-  <link rel="stylesheet" href="{{ . }}">
-{{ end }}
+<link rel="stylesheet" href='{{ "css/tailwind-1.3.5.min.css" | absURL }}'>
 
-{{ with .Site.Params.fonts.body }}
-  <!-- Body font -->
-  <link rel="stylesheet" href="{{ (printf `https://fonts.googleapis.com/css?family=%s` (replace . ` ` `+`)) | safeURL }}">
-  <style>
-    html {
-      font-family: {{ index (split . ":") 0 }}, sans-serif;
-    }
-  </style>
-{{ end }}
+{{ $globals := newScratch }}
+{{ $globals.Set "fonts" slice }}
 
-{{ with .Site.Params.fonts.headings }}
-  <!-- Headings font -->
-  <link rel="stylesheet" href="{{ (printf `https://fonts.googleapis.com/css?family=%s` (replace . ` ` `+`)) | safeURL }}">
-  <style>
-    h1, h2, h3, h4, h5, h6 {
-      font-family: {{ index (split . ":") 0 }}, sans-serif;
-    }
-  </style>
-{{ end }}
-
-<!-- Site CSS -->
-<link rel="stylesheet" href='{{ "css/titi.css" | absURL }}'>
-
-<!-- Custom CSS -->
-{{ if .Site.Params.css }}
-  {{ range .Site.Params.css }}
-    <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
+{{ if .Site.Params.fonts }}
+  {{ range $font := .Site.Params.fonts }}
+    {{ $font_family := replace $font.family " " "+" }}
+    {{ if $font.weight }}
+      {{ $font_family = print $font_family ":" (delimit $font.weight ",") }}
+    {{ end }}
+    {{ $globals.Add "fonts" $font_family }}
   {{ end }}
+  {{ $families := delimit ($globals.Get "fonts") "|" }}
+  {{ $googleFontsURL := print "https://fonts.googleapis.com/css?family=" $families }}
+  <link rel="stylesheet" href="{{ $googleFontsURL | safeHTMLAttr }}">
 {{ end }}
 
-<title>
-  {{ if .Title }}
-    {{ .Title }} | {{ .Site.Title }}
-  {{ else }}
-    {{ .Site.Title }}
-  {{ end }}
-</title>
-
-{{ if .Site.GoogleAnalytics }}
-  {{ template "_internal/google_analytics_async.html" . }}
+{{ if .Title }}
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ else }}
+  <title>{{ .Site.Title }}</title>
 {{ end }}
-
-<meta name="description" content="{{ or .Description .Site.Params.description }}">
-
-<!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="{{ or .Title .Site.Title }}">
-<meta itemprop="description" content="{{ or .Description .Site.Params.description }}">
-<!-- <meta itemprop="image" content=""> -->
-
-<!-- Facebook Meta Tags -->
-{{ template "_internal/opengraph.html" . }}
-
-<!-- Twitter Meta Tags -->
-{{ template "_internal/twitter_cards.html" . }}
