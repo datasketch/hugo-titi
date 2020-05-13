@@ -1,0 +1,58 @@
+{{ $globals := newScratch }}
+{{ $globals.Set "class" "flex flex-col md:flex-row" }}
+
+{{ if .Params }}
+  <!-- Get margin params -->
+  {{ $m_top := (or .Params.margin_y .Params.margin_top | default 0) }}
+  {{ $m_right := (or .Params.margin_x .Params.margin_right | default 0) }}
+  {{ $m_bottom := (or .Params.margin_y .Params.margin_bottom | default 0) }}
+  {{ $m_left := (or .Params.margin_x .Params.margin_left | default 0) }}
+
+  <!-- Get padding params -->
+  {{ $p_top := (or .Params.padding_y .Params.padding_top | default 0) }}
+  {{ $p_right := (or .Params.padding_x .Params.padding_right | default 0) }}
+  {{ $p_bottom := (or .Params.padding_y .Params.padding_bottom | default 0) }}
+  {{ $p_left := (or .Params.padding_x .Params.padding_left | default 0) }}
+
+  <!-- Parse params -->
+  {{ $m_constraints := slice $m_top $m_right $m_bottom $m_left }}
+  {{ $p_constraints := slice $p_top $p_right $p_bottom $p_left }}
+  {{ $bg_image := .Params.bg_image }}
+  {{ $bg_color := .Params.bg_color }}
+  {{ $text_color := .Params.text_color }}
+  {{ $align := .Params.align }}
+
+  {{ $margin := delimit (apply $m_constraints "print" "." "px") " " }}
+  {{ $padding := delimit (apply $p_constraints "print" "." "px") " " }}
+
+  <!-- Global -->
+  {{ $globals.Set "styles" (print "margin:" $margin ";padding:" $padding ";") }}
+
+  {{ if $bg_image }}
+    {{ $styles := $globals.Get "styles" }}
+    {{ $globals.Set "styles" (print $styles "background-image:url(" $bg_image ");background-position:center;background-repeat:no-repeat;background-size:cover;") }}
+  {{ end }}
+
+  {{ if $bg_color }}
+    {{ $styles := $globals.Get "styles" }}
+    {{ $globals.Set "styles" (print $styles "background-color:" $bg_color ";") }}
+  {{ end }}
+
+  {{ if $text_color }}
+    {{ $styles := $globals.Get "styles" }}
+    {{ $globals.Set "styles" (print $styles "color:" $text_color ";") }}
+  {{ end }}
+
+  {{ if $align }}
+    {{ $cls := $globals.Get "class" }}
+    {{ $globals.Set "class" (print $cls " items-" $align) }}
+  {{ end }}
+{{ end }}
+
+<div
+  class='{{ $globals.Get "class"}} {{ .Get "class" }}'
+  {{ with .Get "id" }} id="{{ . }}" {{ end }}
+  {{ with ($globals.Get "styles")}} style="{{ . | safeCSS }}" {{ end }}
+>
+  {{ .Inner }}
+</div>
