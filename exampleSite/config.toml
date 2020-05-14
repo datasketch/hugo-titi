@@ -3,12 +3,14 @@ languageCode = "es-es"
 title = "Hugo Titi"
 theme = "hugo-titi"
 themesDir = "../.."
+# googleAnalytics = ""
 
 [params]
   [params.social]
     facebook = "https://es-la.facebook.com/datasketch/"
     twitter = "https://twitter.com/datasketch"
     email = "info@datasketch.co"
+    always_visible = true
 
   [params.header]
     logo = "images/datasketch.svg"

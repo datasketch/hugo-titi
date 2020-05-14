@@ -1,0 +1,15 @@
+{{ if isset $.Site.Params.social "twitter" }}
+  <a href="{{ $.Site.Params.social.twitter }}" target="_blank" rel="noopener noreferrer">
+    <img src='{{ "images/tw.svg" | absURL }}' alt="">
+  </a>
+{{ end }}
+{{ if isset $.Site.Params.social "email" }}
+  <a href="mailto:{{ $.Site.Params.social.email }}">
+    <img src='{{ "images/mail.svg" | absURL }}' alt="">
+  </a>
+{{ end }}
+{{ if isset $.Site.Params.social "facebook" }}
+  <a href="{{ $.Site.Params.social.facebook }}" target="_blank" rel="noopener noreferrer">
+    <img src='{{ "images/fb.svg" | absURL }}' alt="">
+  </a>
+{{ end }}

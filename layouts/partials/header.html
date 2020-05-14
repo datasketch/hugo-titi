@@ -1,32 +1,38 @@
 {{ with .Site.Params.header }}
+
+{{ $social_always_visible := and (isset $.Site.Params.social "always_visible") $.Site.Params.social.always_visible }}
+{{ $has_menu := isset $.Site.Menus "main" }}
+
 <header id="main-header" data-config="{{ jsonify . }}" class="w-full h-16 px-4">
-  <nav class="h-full flex items-center justify-between">
+  <nav class="h-full flex flex-col items-center md:justify-between md:flex-row">
     <!-- brand -->
-    <div class="w-full flex justify-between items-center md:w-auto">
-      <a href="{{ .Site.BaseURL }}">
+    <div class="w-full h-full flex justify-between items-center md:w-auto">
+      <a href="{{ .Site.BaseURL | absURL }}">
         <img class="max-w-xs" src="{{ .logo | absURL }}" alt="">
       </a>
-      <button style="color: {{ .text_color }};" class="{{ .text_color_class }} md:hidden">
-        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
-      </button>
+      <div class="flex items-center space-x-4 md:hidden">
+        {{ if $has_menu }}
+          <button id="sidebar-toggle" style="color: {{ .text_color }};" class="{{ .text_color_class }}">
+            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
+          </button>
+        {{ end }}
+        {{ if or $social_always_visible (not $has_menu) }}
+            {{ partial "social.html" $ }}
+        {{ end }}
+      </div>
     </div>
     <!-- navlinks -->
-    <div class="hidden md:flex md:space-x-4">
-      {{ if isset $.Site.Params.social "twitter" }}
-        <a href="{{ $.Site.Params.social.twitter }}" target="_blank" rel="noopener noreferrer">
-          <img src='{{ "images/tw.svg" | absURL }}' alt="">
-        </a>
+    <div class="{{ .bg_color_class }} nav-links" {{ with .bg_color }} style="{{ . }}" {{ end }}>
+      {{ if $has_menu }}
+        {{ $currentPage := $ }}
+        {{ range first 5 $.Site.Menus.main }}
+          <a href="{{ .URL }}" class='{{ if $currentPage.IsMenuCurrent "main" . }}is-active{{ end }}' title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
       {{ end }}
-      {{ if isset $.Site.Params.social "email" }}
-        <a href="mailto:{{ $.Site.Params.social.email }}">
-          <img src='{{ "images/mail.svg" | absURL }}' alt="">
-        </a>
-      {{ end }}
-      {{ if isset $.Site.Params.social "facebook" }}
-        <a href="{{ $.Site.Params.social.facebook }}" target="_blank" rel="noopener noreferrer">
-          <img src='{{ "images/fb.svg" | absURL }}' alt="">
-        </a>
-      {{ end }}
+      <div
+        class="{{ if not $social_always_visible }}flex{{ else }}hidden{{ end }} items-center space-x-4 md:flex">
+        {{ partial "social.html" $ }}
+      </div>
     </div>
   </nav>
 </header>

@@ -1,4 +1,11 @@
 /**
+  * Theme related
+  */
+a.is-active {
+  color: bisque;
+}
+
+/**
   * Colors
   */
 

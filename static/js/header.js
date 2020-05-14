@@ -1,5 +1,7 @@
 const configHeader = () => {
   const header = document.getElementById('main-header');
+  const toogle = header.querySelector('#sidebar-toggle');
+  const navlinks = header.querySelector('.nav-links');
   const behaviors = ['mixed', 'normal', 'sticky'];
   let config;
 
@@ -65,14 +67,16 @@ const configHeader = () => {
       }px`;
     }
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       const observedEntry = entries[0];
       if (observedEntry.isIntersecting) {
+        // Stay on top without styles
         header.classList.remove('fixed');
         header.classList.add('absolute');
         bg_color_class && header.classList.remove(bg_color_class);
         header.style.backgroundColor = '';
       } else {
+        // Come with me, styled please.
         header.classList.remove('absolute');
         header.classList.add('fixed');
         bg_color_class && header.classList.add(bg_color_class);
@@ -82,6 +86,11 @@ const configHeader = () => {
 
     observer.observe(thresholdElement);
   }
+
+  // Sidebar toggle
+  toogle.addEventListener('click', (e) => {
+    navlinks.classList.toggle('is-active');
+  });
 };
 
 window.addEventListener('load', configHeader);
