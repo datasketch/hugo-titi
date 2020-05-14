@@ -22,7 +22,7 @@ themesDir = "../.."
     # sticky: always sticky on top
     # normal: static positioned
     # mixed: sticky after first child element of #content is offscreen
-    behavior = "sticky"
+    behavior = "mixed"
   
   [params.footer]
     # The path inside the static folder

@@ -22,7 +22,7 @@
       </div>
     </div>
     <!-- navlinks -->
-    <div class="{{ .bg_color_class }} nav-links" {{ with .bg_color }} style="{{ . }}" {{ end }}>
+    <div class="nav-links">
       {{ if $has_menu }}
         {{ $currentPage := $ }}
         {{ range first 5 $.Site.Menus.main }}

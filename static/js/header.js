@@ -89,7 +89,30 @@ const configHeader = () => {
 
   // Sidebar toggle
   toogle.addEventListener('click', (e) => {
+    header.classList.toggle('is-active');
     navlinks.classList.toggle('is-active');
+
+    if (
+      header.classList.contains('is-active') &&
+      header.classList.contains('absolute')
+    ) {
+      bg_color_class && header.classList.add(bg_color_class);
+      header.style.backgroundColor = bg_color;
+    } else if (
+      !header.classList.contains('is-active') &&
+      header.classList.contains('absolute')
+    ) {
+      bg_color_class && header.classList.remove(bg_color_class);
+      header.style.backgroundColor = '';
+    }
+
+    if (navlinks.classList.contains('is-active')) {
+      bg_color_class && navlinks.classList.add(bg_color_class);
+      navlinks.style.backgroundColor = bg_color;
+    } else {
+      bg_color_class && navlinks.classList.remove(bg_color_class);
+      navlinks.style.backgroundColor = '';
+    }
   });
 };
 
