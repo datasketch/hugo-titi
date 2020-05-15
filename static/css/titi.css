@@ -33,9 +33,54 @@
   margin-bottom: 1.25rem;
 }
 
+.page-post-content a {
+  text-decoration: underline;
+}
+
 .page-post-content img {
   margin-left: auto;
   margin-right: auto;
+}
+
+.page-post-content ul,
+.page-post-content ol {
+  padding-left: 1.25rem;
+}
+
+.page-post-content ul {
+  list-style-type: disc;
+}
+
+.page-post-content ol {
+  list-style-type: decimal;
+}
+
+.page-post-content h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.page-post-content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.page-post-content blockquote {
+  padding-left: 3rem;
+  position: relative;
+}
+
+.page-post-content blockquote::before {
+  background-image: url(/images/quote.png);
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 2rem;
 }
 
 /*
