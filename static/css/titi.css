@@ -1,3 +1,6 @@
+/*
+ * Nav
+ */
 .nav-links {
   display: none;
 }
@@ -16,6 +19,32 @@
 .nav-links.is-active > * ~ * {
   margin-bottom: 0;
   margin-top: 0.75rem;
+}
+
+/*
+ * Post
+ */
+.page-post-content > * ~ * {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
+
+.page-post-content > :last-child {
+  margin-bottom: 1.25rem;
+}
+
+.page-post-content img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Shortcodes
+ */
+ .shortcode-fullwidth {
+  margin-left: calc((100% - 100vw) / 2);
+  width: 100vw;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {

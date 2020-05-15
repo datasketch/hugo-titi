@@ -2,9 +2,9 @@
 <html>
 	{{ partial "head.html" . }}
 
-	<body>
+	<body class="min-h-screen flex flex-col">
 		{{ partial "header.html" . }}
-		<main id="main-content">
+		<main id="main-content" class="flex-grow">
 			{{ block "main" . }}{{ end }}
 		</main>
 		{{ partial "footer.html" . }}

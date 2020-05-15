@@ -3,7 +3,7 @@
 {{ $social_always_visible := and (isset $.Site.Params.social "always_visible") $.Site.Params.social.always_visible }}
 {{ $has_menu := isset $.Site.Menus "main" }}
 
-<header id="main-header" data-config="{{ jsonify . }}" class="w-full h-16 px-4">
+<header id="main-header" data-config="{{ jsonify . }}" class="w-full h-16 px-4 z-10">
   <nav class="h-full flex flex-col items-center md:justify-between md:flex-row">
     <!-- brand -->
     <div class="w-full h-full flex justify-between items-center md:w-auto">
